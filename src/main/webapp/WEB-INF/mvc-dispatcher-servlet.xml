@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <context:component-scan base-package="com.dxfjyygy.controller" />
+    <!-- 静态资源(js、image等)的访问 -->
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
+    <!--添加AOP支持-->
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+    <!--这个是第一种定义 JobDetailBean Bean-->
+
+    <!--<bean id="cronTriggerTest" class="org.springframework.scheduling.quartz.CronTriggerBean">-->
+
+        <!--<property name="jobDetail">-->
+            <!--<bean class="org.springframework.scheduling.quartz.JobDetailBean">-->
+                <!--<property name="jobClass" value="com.dxfjyygy.controller.TesJobBeantQuartz" />-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--&lt;!&ndash;指定cron时间&ndash;&gt;-->
+        <!--&lt;!&ndash;每5秒启动一次&ndash;&gt;-->
+        <!--<property name="cronExpression" value="0/5 * * * * ?" />-->
+    <!--</bean>-->
+
+
+    <!--&lt;!&ndash;来执行调度&ndash;&gt;-->
+    <!--<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">-->
+        <!--<property name="triggers">-->
+            <!--<list>-->
+                <!--<ref bean="cronTriggerTest" />-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--&lt;!&ndash; job的配置&ndash;&gt;-->
+
+    <!--</bean>-->
+    <!--添加trigger触发-->
+    <bean name="startQuartz" lazy-init="false" autowire="no"
+    class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="myJobTrigger" />
+            </list>
+        </property>
+    </bean>
+
+    <!--quartz-2.x的配置 调度配置开始-->
+    <bean id="myJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="myJobDetail"/>
+        </property>
+        <property name="cronExpression">
+            <value>0/5 * * * * ?</value>
+        </property>
+    </bean>
+    <!--job的配置 开始部分-->
+    <bean id="myJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="myJob" />
+        </property>
+        <property name="targetMethod">
+            <value>work</value>
+        </property>
+    </bean>
+     <!--工作bean-->
+    <bean id="myJob" class="com.dxfjyygy.controller.MyJob" />
+    <import resource="common-javabean.xml" />
+    <import resource="infrastructure.xml"/>
+</beans>
+

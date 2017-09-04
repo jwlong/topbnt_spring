@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.dxfjyygy.entity">
+    <class name="Person" table="t_person">
+        <id name="id" column="person_id">
+            <generator class="native"/>
+        </id>
+        <property name="name"  type="java.lang.String"/>
+        <property name="age"  type="java.lang.Integer"/>
+        <!--  用于映射N-1实体 -->
+        <!--<many-to-one name="address" cascade="all" class="Address" column="fk_address_id"></many-to-one>-->
+
+        <!--如果 级联 cacade = all 去掉 将抛出TransientObjectException 前提是在persist保存数据时 用save时，
+        只会保存当前 的对象 不会在关联对象中插入数据-->
+        <!--<many-to-one name="address"  class="Address" column="fk_address_id"></many-to-one>-->
+
+    </class>
+
+</hibernate-mapping>
+
