@@ -1,9 +1,9 @@
 package com.dxfjyygy.utils;
 
 
-import com.dxfjyygy.manager.impl.MyX509TrustManager;
 import com.dxfjyygy.mdl.AccessToken;
 import com.dxfjyygy.mdl.Menu;
+import com.dxfjyygy.service.MyX509TrustManager;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;

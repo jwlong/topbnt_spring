@@ -1,4 +1,4 @@
-package com.dxfjyygy.manager.impl;
+package com.dxfjyygy.service;
 
 import com.dxfjyygy.mdl.*;
 import com.dxfjyygy.utils.WenXinUtil;

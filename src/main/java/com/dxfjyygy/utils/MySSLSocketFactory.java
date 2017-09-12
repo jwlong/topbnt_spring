@@ -1,6 +1,6 @@
 package com.dxfjyygy.utils;
 
-import com.dxfjyygy.manager.impl.MyX509TrustManager;
+import com.dxfjyygy.service.MyX509TrustManager;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 
 import javax.net.ssl.SSLContext;

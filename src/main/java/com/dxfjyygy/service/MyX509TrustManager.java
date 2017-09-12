@@ -1,7 +1,6 @@
-package com.dxfjyygy.manager.impl;
+package com.dxfjyygy.service;
 
 
-import com.dxfjyygy.manager.X509TrustManager;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
