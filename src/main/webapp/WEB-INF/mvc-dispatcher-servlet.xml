@@ -65,7 +65,7 @@
             <ref bean="myJobDetail"/>
         </property>
         <property name="cronExpression">
-            <value>0/5 * * * * ?</value>
+            <value>0/40 * * * * ?</value>
         </property>
     </bean>
     <!--job的配置 开始部分-->

@@ -27,10 +27,11 @@ public class MainController {
 //    private UserService userService;
     @Autowired
     private  UserService userService;
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/test.do", method = RequestMethod.GET)
     public String index() {
       // personService.userAxe();
-        return "index";
+        System.out.println("hello");
+        return "tpl/index";
     }
 //    @RequestMapping(value = "/login",method = RequestMethod.POST)
 //    public String login(HttpServletRequest request){

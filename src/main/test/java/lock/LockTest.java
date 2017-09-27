@@ -8,7 +8,8 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class LockTest {
     public static void main(String[] args) {
-        final Outputter1 output = new Outputter1();
+        //final Outputter1 output = new Outputter1();
+         final  Outputter output = new Outputter();
         new Thread() {
             public void run() {
                 output.output("zhangsan");
@@ -33,6 +34,24 @@ class Outputter1 {
             }
         } finally {
             lock.unlock();// 释放锁
+        }
+    }
+}
+
+/**
+ * not add lock handler
+ */
+class Outputter {
+    public void output(String name) {
+        // TODO 线程输出方法
+        try {
+            for(int i = 0; i < name.length(); i++) {
+                Thread.sleep(100);
+                System.out.print(name.charAt(i));
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
         }
     }
 }
