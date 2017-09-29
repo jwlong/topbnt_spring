@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--单向1-N -->
+<hibernate-mapping package="com.dxfjyygy.entity">
+    <class name="com.dxfjyygy.mdl.BaseMessage" table="t_message">
+        <id name="id" column="pk_id">
+           <generator class="native" />
+        </id>
+        <property name="toUserName" column="to_user_name" type="java.lang.String"/>
+        <property name="fromUserName" column="from_user_name" type="java.lang.Integer"/>
+        <property name="msgType" column="msg_type" type="java.lang.String" />
+        <property name="funcFlag" column="func_flag"  type="java.lang.Integer"/>
+        <property name="msgId" column="msgId" type="java.lang.String" />
+        <property name="createTime" column="createTime" type="long" />
+     </class>
+
+</hibernate-mapping>
+

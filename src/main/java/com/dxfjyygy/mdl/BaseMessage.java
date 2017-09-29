@@ -4,6 +4,7 @@ package com.dxfjyygy.mdl;
  * Created by Administrator on 2017/8/13 0013.
  */
 public class BaseMessage {
+    private long id;
     private String ToUserName ;
     private String FromUserName;
     private String MsgType;
@@ -57,5 +58,13 @@ public class BaseMessage {
 
     public void setFuncFlag(int funcFlag) {
         FuncFlag = funcFlag;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

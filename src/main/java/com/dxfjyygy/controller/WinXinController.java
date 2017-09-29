@@ -1,10 +1,12 @@
 package com.dxfjyygy.controller;
 
 import com.dxfjyygy.mdl.*;
+import com.dxfjyygy.service.MessageService;
 import com.dxfjyygy.utils.CheckUtil;
 import com.dxfjyygy.utils.Contants;
 import com.dxfjyygy.utils.MessageUtil;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,6 +27,8 @@ import java.util.Map;
  */
 @Controller
 public class WinXinController {
+    @Autowired
+    private MessageService messageService;
 
     @RequestMapping(value = "/wx.do",method = RequestMethod.GET)
     @ResponseBody

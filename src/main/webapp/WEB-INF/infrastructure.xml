@@ -48,7 +48,8 @@
         </property>
         <property name="mappingResources">
             <list>
-            <value>com/dxfjyygy/entity/User.hbm.xml</value>
+                <value>com/dxfjyygy/entity/User.hbm.xml</value>
+                <value>com/dxfjyygy/entity/BaseMessage.hbm.xml</value>
             </list>
         </property>
     </bean>
