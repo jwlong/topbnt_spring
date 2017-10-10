@@ -6,6 +6,8 @@ import com.dxfjyygy.service.PersonService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
@@ -16,6 +18,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
@@ -23,8 +26,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:mvc-dispatcher-servlet.xml"})
-@WebAppConfiguration
+//@WebAppConfiguration
 public class T1 {
+    private Logger logger = LoggerFactory.getLogger(T1.class);
 
     @Autowired
     private PersonController personController;
@@ -48,10 +52,12 @@ public class T1 {
         personService.add(person);
     }
     @Test
+    @Transactional
     public void  testContoller1() throws Exception {
        // mockMvc.perform(get("/add"));
-        mockMvc.perform(get("/add"))
+        mockMvc.perform(post("/test/add"))
                 .andExpect(status().isOk());
+
     }
 
 }
