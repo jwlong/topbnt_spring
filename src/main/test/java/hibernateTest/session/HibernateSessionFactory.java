@@ -23,7 +23,7 @@ public class HibernateSessionFactory
 	 * the default package. Use #setConfigFile() to update the location of the
 	 * configuration file for the current session.
 	 */
-	private static String CONFIG_FILE_LOCATION = "/hibernate.cfg.xml";
+	private static String CONFIG_FILE_LOCATION = "/hibernate_mysql.cfg.xml";
 	private static final ThreadLocal<Session> sessionThreadLocal = new ThreadLocal<Session>();
 	private static final ThreadLocal<Transaction> transactionThreadLocal = new ThreadLocal<Transaction>();
 	private static Configuration configuration = new Configuration();
