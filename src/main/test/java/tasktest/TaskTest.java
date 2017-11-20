@@ -9,15 +9,15 @@ import java.util.Timer;
  */
 public class TaskTest {
     public static void main(String[] args) {
-//        for (int i=0;i<5;i++){
-//            Timer timer = new Timer();
-//            timer.scheduleAtFixedRate(new Task2("task "+i,new ProcessNewWorkOrderTaskExecutor()),1000,4000);
-//        }
-
         for (int i=0;i<5;i++){
             Timer timer = new Timer();
-            timer.scheduleAtFixedRate(new Task2("task "+i,new ProcessHibernateQueryTaskExecutor()),1000,4000);
+            timer.scheduleAtFixedRate(new Task2("task "+i,new ProcessNewWorkOrderTaskExecutor()),1000,4000);
         }
+
+//        for (int i=0;i<5;i++){
+//            Timer timer = new Timer();
+//            timer.scheduleAtFixedRate(new Task2("task "+i,new ProcessHibernateQueryTaskExecutor()),1000,4000);
+//        }
     }
     @Test
     public void test(){
