@@ -50,6 +50,10 @@
             <list>
                 <value>com/dxfjyygy/entity/User.hbm.xml</value>
                 <value>com/dxfjyygy/entity/BaseMessage.hbm.xml</value>
+                <value>com/dxfjyygy/entity/Catalog.hbm.xml</value>
+                <value>com/dxfjyygy/entity/Book.hbm.xml</value>
+                <value>com/dxfjyygy/entity/Orders.hbm.xml</value>
+                <value>com/dxfjyygy/entity/Orderitem.hbm.xml</value>
             </list>
         </property>
     </bean>

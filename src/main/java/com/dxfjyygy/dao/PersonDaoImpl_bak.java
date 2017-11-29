@@ -1,5 +1,6 @@
 package com.dxfjyygy.dao;
 
+import com.dxfjyygy.dao.impl.BaseDaoImpl;
 import com.dxfjyygy.entity.Person;
 import org.aspectj.lang.annotation.Aspect;
 import org.hibernate.Session;

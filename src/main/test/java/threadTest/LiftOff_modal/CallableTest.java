@@ -19,7 +19,7 @@ public class CallableTest  {
             try {
                 //只能通过 ExecutorService.submit(task) 来调用,返回一个Future对象
               Future<String> future =  executorService.submit(new TaskWithResult(i+1));
-                String s = future.get(3, TimeUnit.SECONDS);
+              String s = future.get(3, TimeUnit.SECONDS);
               if(future.isDone()){
                   System.out.println("done");
               }

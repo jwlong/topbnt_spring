@@ -1,5 +1,7 @@
-package com.dxfjyygy.dao;
+package com.dxfjyygy.dao.impl;
 
+import com.dxfjyygy.dao.BaseDao;
+import com.dxfjyygy.dao.PageList;
 import org.hibernate.Query;
 import org.hibernate.ScrollableResults;
 import org.hibernate.Session;
@@ -12,7 +14,7 @@ import java.util.List;
 /**
  * Created by longjinwen on 2017/3/22.
  */
-public class BaseDaoImpl  implements BaseDao{
+public class BaseDaoImpl  implements BaseDao {
 
     @Autowired
     private SessionFactory sessionFactory;

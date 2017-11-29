@@ -1,4 +1,4 @@
-package com.dxfjyygy.dao;
+package com.dxfjyygy.dao.impl;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

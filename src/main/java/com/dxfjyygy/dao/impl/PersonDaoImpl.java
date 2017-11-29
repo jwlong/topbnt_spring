@@ -1,5 +1,6 @@
-package com.dxfjyygy.dao;
+package com.dxfjyygy.dao.impl;
 
+import com.dxfjyygy.dao.PersonDao;
 import com.dxfjyygy.entity.Address;
 import com.dxfjyygy.entity.Person;
 import org.aspectj.lang.annotation.Aspect;

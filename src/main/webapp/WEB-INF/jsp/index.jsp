@@ -1,51 +1,24 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: longjinwen
-  Date: 2017/2/8
-  Time: 8:46
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Title</title>
-    <script  type="text/javascript" src="../js/jquery/jquery-1.8.3.min.js"></script>
-    <script>
-        function test() {
-           $.ajax({
-               url:'getTest',
-               type:'post',
-               success:function (e) {
-                   console.log(e);
-                   alert(e);
-               }
+	<title>HTML5ÀËÂş°®ĞÄ±í°×¶¯»­DEMOÑİÊ¾</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-           })
-        }
+	<style>
+		body {
+			font-family: Monospace;
+			background-color: #f0f0f0;
+			margin: 0px;
+		}
+	</style>
 
-    </script>
 </head>
 <body>
-test JS<br>
- <a href="test">testJs</a>
-<hr>
-    <form action="login" method="post">
-    ç”¨æˆ·åï¼š<input type="text" value="" name="username">
-        å¯†ç ï¼š<input type="password" value="" name="passwd">
-        <input type="submit" value="æäº¤">
-    </form>
-
-<form  name="form2" action="login" method="post">
-    é€‰æ‹©è¡¨ï¼š
-    <select name="" onclick="test()">
-        <option>1</option>
-        <option>2</option>
-    </select>
-    <%--<input type="text" value="" name="tableName" >--%>
-
-</form>
-
-
-
+<div style="text-align:center;clear:both">
+	<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+	<script src="/js//follow.js" type="text/javascript"></script>
+</div>
+<iframe frameborder="0" scrolling="no" src="index2.html" width="100%" height="500px"></iframe>
 </body>
 </html>

@@ -1,5 +1,12 @@
 <html>
-<body>
-<h2>Hello World!</h2>
+<head>
+    <script>
+        function goMain(){
+            window.location.href="/topbnt/index";
+        }
+
+    </script>
+</head>
+<body onload="goMain()" >
 </body>
 </html>
