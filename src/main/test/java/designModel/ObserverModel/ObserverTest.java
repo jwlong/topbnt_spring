@@ -14,5 +14,6 @@ public class ObserverTest {
         p.setName("tv变成了狗");
 
         p.setPrice(11d);
+        p.setName("tt");
     }
 }

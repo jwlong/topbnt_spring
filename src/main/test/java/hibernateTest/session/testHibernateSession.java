@@ -60,8 +60,19 @@ public class testHibernateSession {
 
 	}
 
+	/**
+	 * 测试 persist方法 来控制一个长会话
+	 * 完成的功能
+	 */
 	@Test
 	public  void test2(){
+		Session session = HibernateSessionFactory.getSession();
+		Transaction tx = session.beginTransaction();
+		User user = (User) session.load(User.class,1);
 
+		Transaction tx2 = session.getTransaction();
+
+
+		HibernateSessionFactory.closeSession();
 	}
 }
