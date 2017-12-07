@@ -1,58 +1,93 @@
 package com.dxfjyygy.entity;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
- * Created by longjinwen on 2017/3/15.
+ * User entity. @author MyEclipse Persistence Tools
  */
 
-public class User implements Serializable {
-    private Integer id;
-    private String username;
-    private Date createTime;
-    private Date updateTime;
-    private String passwd;
+public class User implements java.io.Serializable {
 
-    public Integer getId() {
-        return id;
-    }
+	// Fields
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private Integer userid;
+	private String username;
+	private String password;
+	private String sex;
+	private Integer age;
+	private Set orderses = new HashSet(0);
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+	// Constructors
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+	/** default constructor */
+	public User() {
+	}
 
-    public Date getUpdateTime() {
-        return updateTime;
-    }
+	/** minimal constructor */
+	public User(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
+	/** full constructor */
+	public User(String username, String password, String sex, Integer age,
+			Set orderses) {
+		this.username = username;
+		this.password = password;
+		this.sex = sex;
+		this.age = age;
+		this.orderses = orderses;
+	}
 
-    public String getPasswd() {
-        return passwd;
-    }
+	// Property accessors
 
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
-    }
+	public Integer getUserid() {
+		return this.userid;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public String getUsername() {
+		return this.username;
+	}
 
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getSex() {
+		return this.sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public Integer getAge() {
+		return this.age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public Set getOrderses() {
+		return this.orderses;
+	}
+
+	public void setOrderses(Set orderses) {
+		this.orderses = orderses;
+	}
 
 }

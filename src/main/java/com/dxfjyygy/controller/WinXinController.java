@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -87,8 +85,9 @@ public class WinXinController {
                 System.out.println("图片消息======>");
                 String description = "图片说明1";
                 String title = "图文标题";
-                picUrl = Contants.LOCAL_TEST_URL+"/images/200952912201250094246.jpg";
-                String url = "www.topbnt.com";
+                picUrl = Contants.LOCAL_TEST_URL+request.getContextPath()+"/static/images/1.jpg";
+                //String url = "www.topbnt.com";
+                String url = Contants.LOCAL_TEST_URL;
                 message = this.buildNewsMessage(baseMessage,description,picUrl,title,url);
                 //text.setPicUrl(picUrl);
                 //text.setMediaId(mediaId);
@@ -165,7 +164,7 @@ public class WinXinController {
         textMessage.setMsgId(baseMessage.getMsgId());
         textMessage.setMsgType(Contants.RESP_TEXT_TYPE);
         textMessage.setContent("欢迎关注我的公众号，这个公众号是我展示自己的一个开始\n,无聊时，可以尝试回复文字，" +
-                "图片，地理位置\n,会有不同发现,公众号现正在折腾中，功能慢慢在完善\n,最后谢谢关注");
+                "图片，地理位置\n,会有不同发现,公众号现正在折腾中，可以输入\"1\"试试,功能慢慢在完善\n,最后谢谢关注");
         return MessageUtil.textMessageToXMl(textMessage);
     }
 

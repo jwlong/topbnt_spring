@@ -1,5 +1,6 @@
-package com.dxfjyygy.dao;
+package com.dxfjyygy.dao.impl;
 
+import com.dxfjyygy.dao.UserDao;
 import com.dxfjyygy.entity.User;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
