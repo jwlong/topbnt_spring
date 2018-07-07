@@ -71,6 +71,8 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient-cache:4.1.2" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpmime:4.1.2" />
           <element id="library" level="project" name="Maven: commons-net:commons-net:2.0" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:unknown" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:unknown" />
           <element id="library" level="project" name="Maven: com.rabbitmq:amqp-client:4.1.0" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.39" />
         </element>
